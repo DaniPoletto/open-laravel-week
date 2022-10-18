@@ -21,8 +21,8 @@ npm run dev
 php artisan migrate
 ```
 
-```` 
 no package.json
+```
         "laravel-mix": "^6.0.0",
 ```
 
@@ -39,6 +39,7 @@ no package.json
 ```
 
 No arquivo /app/Providers/AppServiceProvider.php no método boot:
+
 ```
 Schema::defaultStringLength(191);
 ```
