@@ -7,7 +7,8 @@ O open lavravel week é um evento promovido pelo canal Beer And Code. Consiste e
 O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um catálogo de cervejas (PunkAPI).
 
 ## Funcionalidades
-- [X] Trazer todas as opções de cerveja com filtros. 
+- [X] Trazer todas as opções de cerveja com filtros.
+- [X] Exportação em excel
 
 ## PunkApi
 Foi utilizada a versão 2 da API.
@@ -16,6 +17,27 @@ Foi utilizada a versão 2 da API.
 
 Documentação
 > https://punkapi.com/documentation/v2
+
+## Laravel Excel
+> https://laravel-excel.com/
+
+### Instalação
+```
+composer require maatwebsite/excel
+```
+
+### Criar arquivo para exportação
+```
+php artisan make:export BeerExport
+```
+
+## Rotas
+
+### Retornar cervejas
+http://127.0.0.1:8000/beers
+
+### Exportar cervejas
+http://127.0.0.1:8000/beers/export
 
 ## Instalar Breeze com Vue.js
 - Passo 1:
@@ -77,4 +99,11 @@ Schema::defaultStringLength(191);
 ```
 php artisan make:controller BeerController
 ```
+
+## Criar request
+```
+php artisan make:request BeerRequest
+```
+
+
 
