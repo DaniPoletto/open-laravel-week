@@ -45,3 +45,9 @@ Schema::defaultStringLength(191);
 ```
 
 https://punkapi.com/
+
+# Criar controller
+```
+php artisan make:controller BeerController
+```
+
