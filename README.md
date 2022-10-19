@@ -43,3 +43,5 @@ No arquivo /app/Providers/AppServiceProvider.php no método boot:
 ```
 Schema::defaultStringLength(191);
 ```
+
+https://punkapi.com/
