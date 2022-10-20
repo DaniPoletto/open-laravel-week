@@ -105,5 +105,47 @@ php artisan make:controller BeerController
 php artisan make:request BeerRequest
 ```
 
+## Criar model, controller e migration
+```
+php artisan make:model Export -mr
+```
+
+## Criar uma factory
+```
+php artisan make:factory MealFactory
+```
+
+## Criar um seeder
+```
+php artisan make:seed MealSeeder
+```
+
+> https://fakerphp.github.io/third-party/
+
+> https://github.com/jzonta/FakerRestaurant
+
+Biblioteca para gerar opções de comida e bebida.
+
+```
+composer require jzonta/faker-restaurant
+```
+
+### Limpar banco e apagar seeder
+```
+php artisan migrate:fresh --seed
+```
+
+## Criar classe pra envio de e-mail
+```
+php artisan make:mail ExportEmail
+```
+
+## Mailtrap
+
+> https://mailtrap.io/
+
+
+
+
 
 
