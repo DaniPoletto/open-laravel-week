@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Export;
 use App\Mail\ExportEmail;
 use App\Exports\BeerExport;
 use App\Services\PunkapiService;
 use App\Http\Requests\BeerRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -44,6 +46,11 @@ class BeerController extends Controller
 
         Mail::to("daniela@teste.com.br")
             ->send(new ExportEmail($filename));
+
+        Export::create([
+            'file_name' => $filename,
+            'user_id' => Auth::user()->id
+        ]);
 
         return 'relatorio criado';
     }
