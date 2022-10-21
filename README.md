@@ -7,9 +7,9 @@ O open lavravel week é um evento promovido pelo canal Beer And Code. Consiste e
 O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um catálogo de cervejas (PunkAPI).
 
 ## Funcionalidades
-- [X] Trazer todas as opções de cerveja com filtros.
+- [X] Trazer todas as opções de cerveja com filtros
 - [X] Exportação em excel
-- [X] Enviar arquio excel exportado por e-mail
+- [X] Enviar arquivo excel exportado por e-mail
 - [X] Utilizar jobs para tarefas assincronas
 
 ## PunkApi
