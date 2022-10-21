@@ -13,4 +13,9 @@ class Export extends Model
         'file_name',
         'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

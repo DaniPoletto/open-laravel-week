@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\BeerController;
+use App\Http\Controllers\ExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,9 @@ Route::group([
     Route::get('/', [BeerController::class, 'index']);// ->middleware(['auth']);
 
     Route::get('/export', [BeerController::class, 'export']);
+
+    Route::resource('reports', ExportController::class)
+        ->only(["index", "destroy"]);
 });
 
 

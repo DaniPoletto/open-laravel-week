@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Export;
+use App\Jobs\ExportJob;
 use App\Mail\ExportEmail;
 use App\Exports\BeerExport;
+use App\Jobs\SendExportEmailJob;
+use App\Jobs\StoreExportDataJob;
 use App\Services\PunkapiService;
 use App\Http\Requests\BeerRequest;
 use Illuminate\Support\Facades\Auth;
@@ -26,31 +29,12 @@ class BeerController extends Controller
 
     public function export(BeerRequest $request, PunkapiService $service)
     {
-        $params = $request->validated();
-        $beers = $service->getBeers(
-            isset($params["beer_name"])? $params["beer_name"]: null, 
-            isset($params["food"])? $params["food"]: null, 
-            isset($params["malt"])? $params["malt"]: null, 
-            isset($params["ibu_gt"])? $params["ibu_gt"]: null
-        );
-
         $filename = "cervejas-".now()->format("Y-m-d - H_i").".xlsx";
 
-        // colletc transforma array em collection
-        $filteredBeers = collect($beers)->map(function($value, $key) {
-            return collect($value)->only(['name', 'tagline', 'first_brewed', 'description'])
-            ->toArray();
-        });
-
-        Excel::store(new BeerExport($filteredBeers), $filename);
-
-        Mail::to("daniela@teste.com.br")
-            ->send(new ExportEmail($filename));
-
-        Export::create([
-            'file_name' => $filename,
-            'user_id' => Auth::user()->id
-        ]);
+        ExportJob::withChain([
+            new SendExportEmailJob($filename),
+            new StoreExportDataJob(auth()->user(), $filename)
+        ])->dispatch($request->validated(), $filename);
 
         return 'relatorio criado';
     }

@@ -9,6 +9,8 @@ O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um cat
 ## Funcionalidades
 - [X] Trazer todas as opções de cerveja com filtros.
 - [X] Exportação em excel
+- [X] Enviar arquio excel exportado por e-mail
+- [X] Utilizar jobs para tarefas assincronas
 
 ## PunkApi
 Foi utilizada a versão 2 da API.
@@ -143,6 +145,35 @@ php artisan make:mail ExportEmail
 ## Mailtrap
 
 > https://mailtrap.io/
+
+## Criar Job
+```
+php artisan make:job ExportJob
+```
+
+## Tinker 
+É um REPL (loop de leitura-avaliação-impressão). O REPL permite que os usuários interajam com o aplicativo por meio da linha de comando. É comumente usado para interação com o Eloquent ORM, trabalhos, eventos e muito mais.
+
+```
+php artisan tinker
+```
+
+## Trabalhando com fila
+Mudar no .env
+```
+QUEUE_CONNECTION=redis
+```
+
+```
+php artisan queue:work
+```
+
+
+
+
+
+
+
 
 
 
