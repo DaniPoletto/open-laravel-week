@@ -13,6 +13,7 @@ O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um cat
 - [X] Exportação em excel
 - [X] Enviar arquivo excel exportado por e-mail
 - [X] Utilizar jobs para tarefas assincronas
+- [ ] Utilização do front-end pronto disponibilizado
 
 ## PunkApi
 Foi utilizada a versão 2 da API.
