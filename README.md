@@ -1,5 +1,7 @@
 # Open Laravel Week
 
+> :construction: Projeto em construção :construction:
+
 ## Evento
 O open lavravel week é um evento promovido pelo canal Beer And Code. Consiste em uma semana de lives onde é desenvolvido um projeto em Laravel.
 
