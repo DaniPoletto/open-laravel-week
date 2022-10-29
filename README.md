@@ -1,7 +1,5 @@
 # Open Laravel Week
 
-> :construction: Projeto em construção :construction:
-
 ## Evento
 O open lavravel week é um evento promovido pelo canal Beer And Code. Consiste em uma semana de lives onde é desenvolvido um projeto em Laravel.
 
@@ -13,7 +11,7 @@ O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um cat
 - [X] Exportação em excel
 - [X] Enviar arquivo excel exportado por e-mail
 - [X] Utilizar jobs para tarefas assincronas
-- [ ] Utilização do front-end pronto disponibilizado
+- [X] Utilização do front-end pronto disponibilizado
 
 ## PunkApi
 Foi utilizada a versão 2 da API.
@@ -35,14 +33,6 @@ composer require maatwebsite/excel
 ```
 php artisan make:export BeerExport
 ```
-
-## Rotas
-
-### Retornar cervejas
-http://127.0.0.1:8000/beers
-
-### Exportar cervejas
-http://127.0.0.1:8000/beers/export
 
 ## Instalar Breeze com Vue.js
 - Passo 1:
