@@ -40,38 +40,10 @@ class BeerController extends Controller
     {
         $filename = "cervejas-".now()->format("Y-m-d - H_i").".xlsx";
 
-        // ExportJob::withChain([
-        //     new SendExportEmailJob($filename),
-        //     new StoreExportDataJob(auth()->user(), $filename)
-        // ])->dispatch($request->validated(), $filename);
-
-        $beers = $service->getBeers(
-            isset($request["beer_name"])? $request["beer_name"]: null, 
-            isset($request["food"])? $request["food"]: null, 
-            isset($request["malt"])? $request["malt"]: null, 
-            isset($request["ibu_gt"])? $request["ibu_gt"]: null
-        );
-
-        // colletc transforma array em collection
-        $filteredBeers = array_map(function($value) {
-            return collect($value)
-                ->only(['name', 'tagline', 'first_brewed', 'description'])
-                ->toArray();
-        }, $beers);
-
-        Excel::store(
-            new BeerExport($filteredBeers), 
-            $filename
-        );
-
-        Mail::to("daniela@teste.com.br")
-        ->send(new ExportEmail($filename));
-
-        $user = auth()->user();
-
-        $user->exports()->create([
-            'file_name' => $filename,
-        ]);
+        ExportJob::withChain([
+            new SendExportEmailJob($filename),
+            new StoreExportDataJob(auth()->user(), $filename)
+        ])->dispatch($request->validated(), $filename);
 
         return redirect()->back()
             ->with('success', 'Seu arquivo foi enviado para processamento e em breve estará em seu email');
