@@ -36,7 +36,7 @@ Route::group([
     'prefix' => 'beers',
     'middleware' => 'auth'
 ], function () {
-    //Route::get('/', [BeerController::class, 'index'])->name('beers');// ->middleware(['auth']);
+    Route::get('/', [BeerController::class, 'index'])->name('beers');// ->middleware(['auth']);
 
     Route::post('/export', [BeerController::class, 'export'])->name('beers.export');
 
@@ -45,4 +45,3 @@ Route::group([
 });
 
 
-Route::get('/beers', [BeerController::class, 'index'])->name('beers');// ->middleware(['auth']);
