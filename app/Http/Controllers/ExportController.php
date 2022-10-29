@@ -24,7 +24,7 @@ class ExportController extends Controller
         return Storage::download($export->file_name);
     }
 
-    public function destroy(Export $export)
+    public function destroy($export)
     {
         $export = Export::find($export);
 
