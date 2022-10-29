@@ -105,7 +105,7 @@
                 </Table>
             </div> 
 
-            <!-- <Dialog :open="flash.success" title="Sucesso!" :description="flash.message" button="Ok!" /> -->
+            <Dialog :open="flash.success" title="Sucesso!" :description="flash.message" button="Ok!" />
         </div>
     </AuthenticatedLayout>
 </template>

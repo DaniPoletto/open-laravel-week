@@ -24244,7 +24244,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
 
         _: 1 /* STABLE */
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Dialog :open=\"flash.success\" title=\"Sucesso!\" :description=\"flash.message\" button=\"Ok!\" /> ")])];
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Dialog"], {
+        open: $props.flash.success,
+        title: "Sucesso!",
+        description: $props.flash.message,
+        button: "Ok!"
+      }, null, 8 /* PROPS */, ["open", "description"])])];
     }),
     _: 1 /* STABLE */
   });
@@ -24376,7 +24381,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
 
         _: 1 /* STABLE */
-      }, 8 /* PROPS */, ["paginator"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Dialog :open=\"flash.success\" title=\"Sucesso!\" :description=\"flash.message\" button=\"Ok!\" /> ")])];
+      }, 8 /* PROPS */, ["paginator"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Dialog"], {
+        open: $props.flash.success,
+        title: "Sucesso!",
+        description: $props.flash.message,
+        button: "Ok!"
+      }, null, 8 /* PROPS */, ["open", "description"])])];
     }),
     _: 1 /* STABLE */
   });
