@@ -18,14 +18,15 @@ O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um cat
 - [X] Utilização do front-end pronto disponibilizado
 
 ## PunkApi
-Foi utilizada a versão 2 da API.
+Api de cervejas.
 
 > https://punkapi.com/
 
-Documentação
+Documentação da versão utilizada
 > https://punkapi.com/documentation/v2
 
 ## Laravel Excel
+Pacote para exportação em excel.
 > https://laravel-excel.com/
 
 ### Instalação
@@ -38,7 +39,32 @@ composer require maatwebsite/excel
 php artisan make:export BeerExport
 ```
 
-## Instalar Breeze com Vue.js
+## Faker Restaurant
+
+Biblioteca para gerar opções de comida e bebida.
+
+> https://fakerphp.github.io/third-party/
+
+> https://github.com/jzonta/FakerRestaurant
+
+### Instalação
+```
+composer require jzonta/faker-restaurant
+```
+
+## Mailtrap
+
+> https://mailtrap.io/
+
+## Tinker 
+É um REPL (loop de leitura-avaliação-impressão). O REPL permite que os usuários interajam com o aplicativo por meio da linha de comando. É comumente usado para interação com o Eloquent ORM, trabalhos, eventos e muito mais.
+
+```
+php artisan tinker
+```
+
+## Breeze com Vue.js
+### Instalação
 - Passo 1:
 ```
 composer require laravel/breeze:1.9.2
@@ -84,7 +110,7 @@ E os comandos utilizados:
     },
 ```
 
-### Resolução de problemas ao rodas as migrations:
+### Resolução de problemas ao rodar as migrations:
 No arquivo /app/Providers/AppServiceProvider.php no método boot acrescentar:
 
 ```
@@ -119,16 +145,6 @@ php artisan make:factory MealFactory
 php artisan make:seed MealSeeder
 ```
 
-> https://fakerphp.github.io/third-party/
-
-> https://github.com/jzonta/FakerRestaurant
-
-Biblioteca para gerar opções de comida e bebida.
-
-```
-composer require jzonta/faker-restaurant
-```
-
 ### Limpar banco e apagar seeder
 ```
 php artisan migrate:fresh --seed
@@ -139,28 +155,13 @@ php artisan migrate:fresh --seed
 php artisan make:mail ExportEmail
 ```
 
-## Mailtrap
-
-> https://mailtrap.io/
-
 ## Criar Job
 ```
 php artisan make:job ExportJob
 ```
 
-## Tinker 
-É um REPL (loop de leitura-avaliação-impressão). O REPL permite que os usuários interajam com o aplicativo por meio da linha de comando. É comumente usado para interação com o Eloquent ORM, trabalhos, eventos e muito mais.
-
-```
-php artisan tinker
-```
-
 ## Trabalhando com fila
-Mudar no .env
-```
-QUEUE_CONNECTION=redis
-```
-
+Rodar todos os jobs que ficaram na fila
 ```
 php artisan queue:work
 ```
