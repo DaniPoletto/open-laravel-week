@@ -22,7 +22,7 @@ Api de cervejas.
 
 > https://punkapi.com/
 
-Documentação da versão utilizada
+Documentação da versão utilizada:
 > https://punkapi.com/documentation/v2
 
 ## Laravel Excel
@@ -53,7 +53,7 @@ composer require jzonta/faker-restaurant
 ```
 
 ## Mailtrap
-
+Ferramenta de testes com e-mail:
 > https://mailtrap.io/
 
 ## Tinker 
@@ -160,8 +160,7 @@ php artisan make:mail ExportEmail
 php artisan make:job ExportJob
 ```
 
-## Trabalhando com fila
-Rodar todos os jobs que ficaram na fila
+### Rodar todos os jobs que ficaram na fila
 ```
 php artisan queue:work
 ```
