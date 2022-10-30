@@ -1,4 +1,8 @@
-# Open Laravel Week
+<div align="center">
+  <h1>Open Laravel Week</h1>
+</div>
+
+![Capa](https://github.com/DaniPoletto/open-laravel-week/blob/main/capa.png)
 
 ## Evento
 O open lavravel week é um evento promovido pelo canal Beer And Code. Consiste em uma semana de lives onde é desenvolvido um projeto em Laravel.
