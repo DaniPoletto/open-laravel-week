@@ -17,6 +17,40 @@ O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um cat
 - [X] Utilizar jobs para tarefas assincronas
 - [X] Utilização do front-end pronto disponibilizado
 
+## Tecnologias utilizadas
+- PHP 7.4
+- Laravel 8
+- PunkApi
+- Laravel Excel
+- Faker Restaurant
+- Mailtrap
+- Breeze
+- Vue.js
+- MySql
+
+## Inicialização
+1 - Baixar os arquivos do repositório utilizando git clone
+
+2 - Instalar as dependências do projeto
+``` componser install```
+
+3 - Editar o arquivo .env com as credencias do banco de dados
+
+4 - Rodar as migrations
+```
+php artisan migrate
+```
+
+5 - Rodar seeder para criar usuário teste
+```
+php artisan db:seed --class=AdminUserSeeder
+```
+
+5 - Subir o servidor
+``` 
+php artisan serve
+```
+
 ## PunkApi
 Api de cervejas.
 
