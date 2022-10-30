@@ -17,6 +17,8 @@ O projeto desenvolvido foi um sistema em Laravel para consumir uma API de um cat
 - [X] Utilizar jobs para tarefas assincronas
 - [X] Utilização do front-end pronto disponibilizado
 
+![Demo](https://github.com/DaniPoletto/open-laravel-week/blob/main/demo.gif)
+
 ## Tecnologias utilizadas
 - PHP 7.4
 - Laravel 8
